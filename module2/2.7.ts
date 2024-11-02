@@ -7,7 +7,9 @@
     }
     type owner ="bike"| "car"|"ship" //menually
     type owner2 =keyof vehical //using keyof operator
-function getpropertyValue(obj:object , key:string){
+    const person :owner2='ship'
+const getpropertyValue= <X,Y extends keyof X>(obj:X, key:Y)=>{
+    return obj[key]
 
 }
 const user ={
@@ -16,6 +18,7 @@ const user ={
     address:'ctg'
 }
 
+const res1 =getpropertyValue(user,'name')
 
     // 
 
