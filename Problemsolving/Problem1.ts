@@ -87,4 +87,80 @@ const assertionandNarrowing = (a : string | number   ): number=>{
 const res1 =assertionandNarrowing('number')
 const res2 =assertionandNarrowing(8)
 console.log(res1,res2);
+// problem 8
+type User ={
+    name: string;
+    email:string
 }
+type Admin ={
+    adminlevel:number
+}
+type AdminUser=User & Admin
+function describeAdmin(user: AdminUser): string{
+    return `Admin User: ${user.name} - Email: ${user.email} - Admin Level`
+}
+const admin: AdminUser = {
+    name: "Alice",
+    email: "alice@example.com",
+    adminlevel: 3,
+  };
+const res =describeAdmin(admin)
+// problem 9
+type Address = {
+    city?: string;
+  };
+  
+  type Employee = {
+    name: string;
+    address?: Address;
+  };
+  
+  function getEmployeeCity(employee: Employee): string | undefined {
+   
+    return employee.address?.city;
+  }
+  
+  // Example usage
+  const employeeWithCity: Employee = {
+    name: "John Doe",
+    address: {
+      city: "New York",
+    },
+  };
+  
+  const employeeWithoutCity: Employee = {
+    name: "Jane Doe",
+  };
+  
+  console.log(getEmployeeCity(employeeWithCity)); 
+  console.log(getEmployeeCity(employeeWithoutCity)); 
+//   problem 10
+const getDisplayName =(name: string | null | undefined): string=>
+{
+return name ?? "Anonymous"
+}
+
+console.log(getDisplayName(null));
+// problem
+function processData(data: unknown): string | number | undefined {
+    if (typeof data === "string") {
+      // If data is a string, return the uppercased version
+      return data.toUpperCase();
+    } else if (typeof data === "number") {
+      // If data is a number, return its square
+      return data * data;
+    } else {
+      // For other types, return undefined or handle as needed
+      return undefined;
+    }
+  }
+  
+  // Examples
+  console.log(processData("hello")); // Output: "HELLO"
+  console.log(processData(5));       // Output: 25
+  console.log(processData(true));    // Output: undefined
+  
+
+} 
+
+
