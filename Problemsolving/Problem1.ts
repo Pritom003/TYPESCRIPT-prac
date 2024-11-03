@@ -75,5 +75,16 @@ function sumAll(...numbers: number[]): number {
 
 const result = sumAll(1, 2, 3, 4, 5);
 console.log(result); 
-
+// Problem 7
+const assertionandNarrowing = (a : string | number   ): number=>{
+    if (typeof a === 'string'){
+        const length =a.length
+        return length
+    }else {
+        return a *a
+    }
+}
+const res1 =assertionandNarrowing('number')
+const res2 =assertionandNarrowing(8)
+console.log(res1,res2);
 }
