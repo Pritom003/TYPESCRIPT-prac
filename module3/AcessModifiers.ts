@@ -1,6 +1,8 @@
 {
 class  Player {
-    constructor( public name:string ,public readonly jerseyNO:number ,private _totalScore:number ){
+    constructor( public name:string ,
+        public readonly jerseyNO:number ,
+        private _totalScore:number ){
 
     }
     AddScore(score :number){
@@ -18,5 +20,5 @@ Player1.getScore()
 
 // readonly can not be modified outside the class , 
 // private can not be accessed outside the class and even in the child class 
-// protected can not be accessed outside the class but can be accessed in the child class 
+// protected can not be accessed outside the class but can be accessed in the child class j
 }
